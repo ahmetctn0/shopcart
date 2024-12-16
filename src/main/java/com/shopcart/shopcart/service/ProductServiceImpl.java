@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
     public boolean checkProductStock(int productId, int quantity) {
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Ürün bulunamadı: " + productId));
-        return product.getStock() >= quantity;  // Eğer ürünün stoğu yeterliyse true döner
+        return product.getStock() >= quantity;
     }
 
     public void updateProductStock(int productId, int quantity) {
